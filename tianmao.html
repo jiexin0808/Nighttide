@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>汐之商城</title>
+    <style type="text/css">
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #top{
+            height: 40px;
+            width: auto;
+            background-color:#e3e2df;
+            margin: 0px auto;
+        }
+        #login{
+            color:darkgray;
+            margin-left: 20px;
+        }
+        #login:link,#login:hover{
+            color: red;
+        }
+        #register{
+            margin-left: 20px;
+        }
+        #register:link,#register:hover{
+            color: red;
+        }
+
+        #personal{
+            margin-left: 500px;
+        }
+        #personal:link,personal:hover{
+            color: red;
+        }
+        #shopping_cart{
+            margin-left: 20px;
+        }
+        #shopping_cart:link,#shopping_cart:hover{
+            color: red;
+        }
+        #collect_item{
+            margin-left: 20px;
+        }
+        #collect_item:link,#collect_item:hover{
+            color: red;
+        }
+        #search{
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            padding-top:50px ;
+            text-align: center;
+            padding-left: 230px;
+            top: 20px;
+        }
+        #xizhi{
+            width: 250px;
+            height: 250px;
+
+        }
+        #search1{
+            width: 300px;
+            height: 50px;
+            border: 2px solid red;
+            opacity: 0.7;
+        }
+        #search2{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            color:white;
+            opacity: 0.7;
+        }
+        ul{
+            list-style: none;
+        }
+        #subnav{
+            background-color: #666666;
+
+            width: 120px;
+            height: 200px;
+            margin-left: 100px;
+            text-align: center;
+            background-image: url("汐之背景2.jpg");
+
+        }
+        #fenlei1{
+            font-size: x-large;
+            font-weight: bold;
+        }
+        #body{
+            width: 100%;
+            height: 302px;
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .Rotation_plot{
+            width: 100%;
+            height: 302px;
+            float: left;
+            position: absolute;
+            display: none;
+        }
+        #Rotation_plot1{
+            display: block;
+            background-image: url("lunbo1 (2).jpg");
+        }
+        #Rotation_plot2{
+            display: block;
+            background-image: url("lunbo2.jpg");
+        }
+        #Rotation_plot3{
+            display: block;
+            background-image: url("lunbo3.jpg");
+        }#button1{
+             position: absolute;
+             width: 40px;
+             height: 80px;
+             left: 240px;
+             margin-top: 110px;
+             background-image: url("右标记.png") ;
+             opacity: 0.5;
+         }
+        #button2{
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            left: auto;
+            right: -24px;
+            margin-top: 90px;
+            background-image: url("右标记.png");
+            transform: rotate(180deg);
+            opacity: 0.5;
+        }
+        .dots{
+            position: absolute;
+            right: 6px;
+            bottom: 15px;
+            line-height: 20px;
+        }
+        .dots span{
+            display: inline-block;
+            /*水平呈现*/
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            /*变成圆角*/
+            background-color: black;
+            opacity: 0.3;
+            box-shadow: 0 0 0 2px white inset;
+            /*加里面的阴影 =填充*/
+
+            cursor: pointer;
+            /*光标变成手形*/
+        }
+        #dots1 {
+            background-color: white;
+            box-shadow: 0 0 0 2px white inset;
+            /*id选择器权重大于class选择器*/
+        }
+        #menu_box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 263px;
+            height: 302px;
+            background-color:red;
+            opacity: 0.3;
+            z-index: 1;
+        }a{
+             text-decoration: none;
+             /*链接下划线去掉*/
+         }.menu{
+              height: 63px;
+              line-height: 64px;
+              font-size: 18px;
+              cursor: pointer;
+              padding: 0 24px;
+              display: block
+          }
+        .menu a{
+            display: block;
+            color: white;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            height: 63px;
+            position: relative;
+        }
+
+        .menu:last-child a{
+            border-bottom: none;
+        }
+        /*最后一个子元素没有底下的线*/
+
+        .sub_menu{
+            width: 530px;
+            height: 302px;
+            position: absolute;
+            left: 263px;
+            top:0;
+            background-color: white;
+            opacity: 0.5;
+            z-index: 500;
+            border: 1px solid #d9dde1;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: none;
+            float: left;
+        }.content{
+             margin-bottom: 25px;
+         }
+
+        .sub_menu{
+            display: none;
+        }
+        #subnav{
+            width: 200px;
+            height: 1100px;
+            border: 2px solid black;
+
+            margin-left: 100px;
+
+
+        }
+        .icons{
+            width: 60px;
+            height: 60px;
+            border: 1px solid black;
+            border-radius: 50%;
+
+        }
+        li{
+            text-align: center;
+            padding-top: 20px;
+        }
+        .Waterfall_Chart{
+            margin-left: 400px;
+            margin-top: -1070px;
+            height: 800px;
+            width: 800px;
+
+        }
+
+        .Chart{
+            column-width: 250px;
+            -webkit-column-width: 250px;
+            column-gap: 5px;
+            -webkit-column-gap:5px ;
+            padding-top: 20px;
+        }
+        .Chart div{
+            width: 250px;
+            margin: 5px 0px;
+        }
+        .Chart img{
+            margin: 50px auto;
+            width: 80%;
+            border: 20px solid white;
+            display: block;
+        }
+        .body{
+            background-color:whitesmoke;
+            margin-top: -30px;
+            width: 100%;
+            height: 1600px;
+        }.foot{
+             width: 100%;
+             height: 150px;
+             background-color: white;
+             bottom: 10px;
+         }
+    </style>
+
+</head>
+<body>
+    <div id="top">
+
+        <p style="
+         color:darkgray;
+         margin-left: 100px;
+         font-size: small;
+         padding: 10px;">
+            hello，欢迎来到汐之
+            <a  href="login.html" id="login">请登录 </a>
+            <a id="register">免费注册</a>
+
+            <a  href="" id="personal">我的汐之</a>
+            <a  href="bong.html" id="shopping_cart">购物车</a>
+            <img src="购物车.png" style=" width: 20px;
+                                          height: 15px;">
+            <a id="collect_item">收藏夹</a>
+        </p>
+
+    </div>
+        <div id="head">
+
+        <img src="logo.jpg" style="
+                                   width: 100px;
+                                   height:100px;
+                                   margin-left: 100px;">
+
+        <span id="search">
+
+        <input class="search" id="search1" type=“text" >
+        <input  class="search" id="search2" type="button" value="Search">
+
+    </span>
+
+        </div>
+<!--    轮播图开始-->
+    <div id="body" id="body">
+
+        <div class="banner" id="banner">
+            <a href="">
+                <div class="Rotation_plot" id="Rotation_plot1"></div>
+            </a>
+            <a href="">
+                <div class="Rotation_plot" id="Rotation_plot2"></div>
+            </a>
+            <a href="">
+                <div class="Rotation_plot" id="Rotation_plot3"></div>
+            </a>
+        </div>
+<!--        左右光标开始-->
+        <a href="javascript:void(0)" class="button" id="button1"></a>
+        <a href="javascript:void(0)" class="button" id="button2"></a>
+        <div  id="dots" class="dots">
+<!--            <焦点图开始>-->
+            <span class="dots1" id="dots1" ></span>
+            <span class="dots2" id="dots2" ></span>
+            <span class="dots3" id="dots3" ></span>
+
+         </div>
+        <div id="main" class="main">
+<!--        一级菜单开始-->
+            <div class="menu_box" id="menu_box">
+<!--                <div class="menu_content" id="menu_content">-->
+                    <div class="menu" id="menu">
+                            <a><span id="earring_menu" style="display: block">耳环
+                             <img src="耳环.png" style="
+                                                            width: 40px;
+                                                            height: 40px;
+                                                            position: absolute;
+                                                            left: 180px;
+                                                            top: 15px;
+                                                           ">
+                            </span></a>
+                            <a><span>项链
+                                <img src="项链.png" style="
+                                                             width: 40px;
+                                                             height: 40px;
+                                                             position: absolute;
+                                                             left: 180px;
+                                                             top: 15px;">
+                            </span></a>
+                            <a><span>手链
+                                <img src="手链.png" style="
+                                                             width: 40px;
+                                                             height: 40px;
+                                                             position: absolute;
+                                                             left: 180px;
+                                                             top: 15px;">
+                            </span></a>
+                            <a><span>戒指
+                            <img src="戒指.png" style="
+                                                             width: 40px;
+                                                             height: 40px;
+                                                             position: absolute;
+                                                             left: 180px;
+                                                             top: 15px;">
+                            </span></a>
+                            <a><span>胸针
+                                <img src="胸针.png" style=" width: 40px;
+                                                             height: 40px;
+                                                             position: absolute;
+                                                             left: 180px;
+                                                             top: 15px;">
+                            </span></a>
+                    </div>
+            </div>
+<!--                二级菜单-->
+                            <div class="sub_menu" id="sub_menu">
+<!--                                 <div id="inner_box">-->
+<!--                                        <div class="earring_content">-->
+                                            <div style="
+                                    font-size: 24px;
+                                    color:red;
+                                    line-height: 16px;
+                                    font-weight: bold;
+                                    margin: 28px 0 30px 0;">耳环</div>
+                                                <div class="content">
+                                                    <span><a href="javascript:void(0)">耳夹专区</a></span>
+                                                    <span ><a href="javascript:void(0)">耳钉专区</a></span>
+                                                    <span><a href="javascript:void(0)">耳圈专区</a></span>
+                                                    <span><a href="javascript:void(0)">耳线专区</a></span>
+                                                    <span ><a href="javascript:void(0)">耳骨夹&耳挂专区</a></span>
+                                                    <span><a href="javascript:void(0)">不对称专区</a></span></div>
+                                             </div>
+<!--                                         </div>-->
+<!--                                    </div>-->
+                                 </div>
+                            </div>
+
+
+    <div class="body">
+<!--        身体部分-->
+
+
+    <div class="subnav" id="subnav">
+        <ul >
+        <li>
+            <img src="tubiao1.jpg" class="icons" ><p>新品上线</p>
+        </li>
+        <li>
+            <img src="tubiao2.jpg" class="icons" ><p>本周热销</p>
+        </li>
+        <li>
+            <img src="tubiao6.jpg" class="icons" ><p>推荐榜单</p>
+        </li>
+        <li>
+            <img src="tubiao3%20(2).jpg" class="icons" ><p>售罄绝版</p>
+        </li>
+        <li>
+            <img src="tubiao5.jpg" class="icons" ><p>产品动态</p>
+        </li>
+            <li>
+                <img src="tubiao7.jpg" class="icons" ><p>平价专区</p>
+            </li>
+            <li>
+                <img src="tubiao9.jpg" class="icons" ><p>送礼专区</p>
+            </li>
+            <li>
+                <img src="tubiao4.jpg" class="icons" ><p>情侣专区</p>
+            </li>
+            <li>
+                <img src="tubiao12.jpg" class="icons" ><p>男款专区</p>
+            </li>
+            <li>
+                <img src="tubiao10.jpg" class="icons" ><p>滴胶专区</p>
+            </li>
+        </ul>
+    </div>
+
+        <div class="Waterfall_Chart">
+
+            <div class="Chart">
+                <br/>
+<!--                <h2  id="h2id1">耳环推荐-->
+<!--                    earring</h2>-->
+                <div><img src="26.jpg"></div>
+                <div><img src="3.jpg"></div>
+                <div><img src="21.jpg"></div>
+                <div><img src="22.jpg"></div>
+                <div><img src="8.jpg"></div>
+                <div><img src="23.jpg"></div>
+                <div><img src="24.jpg"></div>
+                <div><img src="12.jpg"></div>
+                <div><img src="13.jpg"></div>
+                <div><img src="25.jpg."></div>
+                <div><img src="27.jpg."></div>
+            </div>
+        </div>
+</div>
+    <div class="foot">
+        <p class="foot_line" style="   width: 100%;
+                                       height: 1px;
+                                       background-color: #c5c5c5;">_</p>
+        <p>汐之承诺：</p>
+        <p class="foot_word" id="dibuwenzi1" style="margin-top: 20px;
+                                                    margin-left: 200px">品质保障</br>品质护航购物愉快</p>
+        <p class="foot_word" id="dibuwenzi2" style="margin-left: 400px">售后无忧</br>令人满意的售后速度</p>
+        <p class="foot_word" id="dibuwenzi3" style="margin-left: 600px">特色服务体验</br>专注为您呈现不同的特色服务</p>
+        <p class=foot_word" id="dibuwenzi4" style="margin-left: 900px">帮助中心</br>您的独家购物指南</p>
+<!--        -->
+<!--        <p class="dibuwenzi2" >品质护航购物愉快-->
+<!--            <span class="dibuwenzi2" >令人满意的售后速度</span>-->
+<!--            <span class="dibuwenzi2" >专注为您呈现不同的特色服务</span>-->
+<!--            <span class="dibuwenzi2" >您的独家购物指南 </span>-->
+<!--        </p>-->
+
+    </div>
+    </div>
+
+<script>
+    var index = 0    //当前显示图片的索引，默认值为0
+    timer =null; //定时器
+    main =byId("main"),
+        button1 = byId("button1"),  //上一张
+        button2 = byId("button2");    //下一张
+    pics=byId("banner").getElementsByTagName("div")
+    dots=byId("dots").getElementsByTagName("span")
+    dots1=byId("dots1").getElementsByTagName("span")
+    dots2=byId("dots2").getElementsByTagName("span")
+    dots3=byId("dots3").getElementsByTagName("span")
+
+    sub_menu=byId("sub_menu")  //二级菜单
+    earring_menu=byId("earring_menu") //一级菜单
+
+    size=pics.length;
+
+
+    //
+    // //封装getElemeById（）
+    function byId(id) {
+        return typeof (id) === "string" ? document.getElementById(id) : id;
+        //识别它是否是一个字符串
+    }
+    //封装通用事件绑定方法，每个浏览器都支持
+    //element 绑定事件的DOM元素
+    //              事件名
+    //              事件处理程序
+    function addHandler(element,type,handler){
+        //非ie浏览器
+        if (element.addEventListener){
+            element.addEventListener(type,handler,true);
+            //IE浏览器支持DOM2版本
+        }else if(element.attachEvent){
+            element.attachEvent("on"+type,handler);
+            //IE浏览器不支持DOM2版本
+        }else{
+            element["on"+type]=handler;
+        }
+    }
+    //清除定时器，停止自动轮播
+    function stopAutoPlay() {
+        if(timer){
+            clearInterval(timer);
+        }
+    }
+    //自动轮播  定时器
+    function startAutoPlay(){
+        timer =setInterval(function () {
+            index++;
+            if(index>=size) index=0;
+            for(var i=0;i<size;i++){
+                pics[i].style.display="none";
+                dots[i].className="dots3";
+            }
+            pics[index].style.display="block";
+            dots[index].className="dots";
+
+        },3000)
+    }
+
+
+
+    //点击下一张按钮显示下一张图片
+    //     button1.onclick =function(){
+    //          console.log("11111")
+    //     }
+    // button1.onclick = function () {
+    //     alert("2")
+    // }  // dom0级写法
+    // button2.addEventListener("click",function() {
+    //     alert("1")
+    // });
+    // button2.addEventListener("click",function () {
+    //     alert("2")
+    // });   //dom2级写法
+
+    addHandler(button2,"click",function () {
+        index++;
+        if (index>=size) index=0;
+        for(var i=0;i<size;i++){
+            pics[i].style.display="none";
+            dots[i].className="dot3";
+        }
+        pics[index].style.display="block";
+        dots[index].className="dots";
+    }) //封装之后
+    addHandler(button1,"click",function () {
+        index--;
+        if (index<=0) index=size-1;
+        for(var i=0;i<size;i++){
+            pics[i].style.display="none";
+            dots[i].className="dots1";
+        }
+        pics[index].style.display="block";
+        dots[index].className="dots";
+    }) //封装之后
+    //自动开启轮播
+
+    //鼠标划入main,停止轮播
+    addHandler(main,"mouseover",stopAutoPlay)
+    //鼠标离开main,开始轮播
+    addHandler(main,"mouseout",startAutoPlay)
+
+    //自动开启轮播
+    startAutoPlay();
+    //鼠标划过一级菜单时
+    function subMenuover(){
+        sub_menu.style.display="block";
+    }
+    function subMenuget(){
+        sub_menu.style.display="none";
+    }
+    function subMenukeep(){
+        sub_menu.style.display="block";
+    }
+    addHandler(earring_menu,"mouseover",subMenuover)
+    //鼠标离开一级菜单时
+    addHandler(earring_menu,"mouseout",subMenuget)
+    //鼠标停留在二级菜单时
+    addHandler(sub_menu,"mouseover",subMenukeep)
+
+</script>
+</body>
+
+</html>
